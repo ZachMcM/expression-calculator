@@ -1,8 +1,22 @@
 # Expression Calculator
 
+## Compilation
+```
+g++ -std=c++11 -o calculate stack.cpp calculator.cpp
+```
+## Modifying Path
+```
+export PATH=".:$PATH"
+```
+
+## Usage
+```
+calculate "5 + 8^2 - (33 + 7)"
+```
+
 ## How It Works
 
-We first transform the expression to postfix notation
+The user must input their expression with surrounding quotation marks. We first transform the expression to postfix notation
 
 1. Scan the infix expression from left to right. 
 2. If the scanned character is an operand, put it in the postfix expression. 
@@ -15,11 +29,6 @@ Else, pop all operators from the stack that have precedence higher than or equal
 7. Once the scanning is over, Pop the stack and add the operators in the postfix expression until it is not empty.
 
 Then we evaluate the postfix expression using a stack
-
-## Compilation
-```
-g++ -std=c++11 -o calculate stack.cpp calculator.cpp
-```
 
 ## Future Features
 - Support for more constant literals such as pi and Euler's number (e)
